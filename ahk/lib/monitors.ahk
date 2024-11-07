@@ -5,7 +5,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; Snap Functionality ____________________________________________________________________
 
 
-global dockHeight = 45
+global dockHeight = 46
 
 
 f1::
@@ -52,7 +52,7 @@ WinMove, A, , screen.left, 0, screen.third*2, screen.height
 return
 
 ; HALF HEIGHT
-^+`::
+#+`::
 screen:= getActiveMonitor()
 WinGetPos, X, Y, W, H, A 
 if ( H = screen.height/2 and Y = 0)

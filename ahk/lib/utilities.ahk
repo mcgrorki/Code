@@ -3,61 +3,98 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-
-CapsLock & f::
-send ^{BackSpace}
-return
-
-CapsLock & v::
-send {Delete}
-return
-
-Capslock & r::
-send ^{Left}
-return
-
-Capslock & t::
-send ^{Right}
-return
-
-Capslock & e::
-send {Up}
-return
-
-Capslock & d::
-send {Down}
-return
-
-Capslock & x::
-send {Left}
-return
-
-Capslock & c::
-send {Right}
-return
-
-^!k::
-send kmcgrory1105@gmail.com
-return
-
-!Space::
-send #^r
+; _______________________________
+; Basic Nav
+Capslock & q::
+send {Enter}
 return
 
 Capslock & a::
 send {end}{enter}
 return
 
-Capslock & s::
-send {down}{End}
+Capslock & o::
+send {Up}{End}{Enter}
+return
+
+Capslock & e::
+send ^{Left}
+return
+
+Capslock & r::
+send ^{right}
 return
 
 Capslock & w::
-Send {Up}{End}
+Send {Up}
 return
 
-Capslock & q::
-send {Enter}
+Capslock & s::
+send {down}
+return
+
+Capslock & d::
+send {End}
+return
+
+CapsLock & c::
+send {Home}
+return
+
+Capslock & v::
+send {End}+{Home}
+return
+
+Capslock & z::
+send {Left}
+return
+
+Capslock & x::
+send {Right}
+return
+
+PgUp::
+send ^{Left}
+return 
+
+PgDn::
+send ^{Right}
+return
+
+;_______________________________
+; Delete Functionality
+
+CapsLock & f::
+send ^{BackSpace}
+return
+
+Capslock & g::
+send {End}+{Home}{BackSpace}
+return
+
+Capslock & t::
+send ^{Delete}
+return
+
+Capslock & y::
+send {Delete}
+return
+
+Capslock & Space::
+send {BackSpace}
+return
+
+
+;_______________________________
+; misc
+
+CapsLock & l::
+send _______________________________
+return
+
+
+^!k::
+send kmcgrory1105@gmail.com
 return
 
 
@@ -71,50 +108,8 @@ send {f2}
 Hotkey f2,, On
 return
 
-
 !^w::
 send !{f4}
-return
-
-Home::
-send +{Home}
-return 
-
-+Home::
-send {Home}
-return
-
-PgUp::
-send ^{Left}
-return 
-
-^PgUp::
-send ^{Left}^{Left}^{Left}
-return
-
-+PgUp::
-send +^{Left}
-return
-
-PgDn::
-send ^{Right}
-return
-
-^PgDn::
-send ^{Right}^{Right}^{Right}
-return
-
-+PgDn::
-send ^+{Right}
-return
-
-;Ctrl Del
-Insert::
-send ^{Backspace}
-return
-
-^Insert::
-send ^{Backspace}^{Backspace}^{Backspace}
 return
 
 ; Play Button
@@ -137,11 +132,11 @@ return
 
 
 ; Edit close.ahk
-^!`::
-run C:\Program Files\Microsoft VS Code\Code.exe "C:\Users\kiern\OneDrive\K_Cloud\Code\ahk\core_cloud.ahk"
+^!1::
+run C:\Program Files\Microsoft VS Code\Code.exe "./ahk.code-workspace"
 return
 
-^!1::
+^!`::
 run C:\Users\kiern\OneDrive\K_Cloud\Code\ahk
 return
 
@@ -159,6 +154,7 @@ return
 #!`::Suspend
 
 Capslock & f1::
+SetCapsLockState, off
 reload
 MsgBox, done
 return
@@ -169,3 +165,39 @@ send ^+i
 sleep 700
 send ^+c
 return
+
+
+
+; Home::
+; send +{Home}
+; return 
+
+; +Home::
+; send {Home}
+; return
+
+; ^PgUp::
+; send ^{Left}^{Left}^{Left}
+; return
+
+; +PgUp::
+; send +^{Left}
+; return
+
+
+; ^PgDn::
+; send ^{Right}^{Right}^{Right}
+; return
+
+; +PgDn::
+; send ^+{Right}
+; return
+
+; ;Ctrl Del
+; Insert::
+; send ^{Backspace}
+; return
+
+; ^Insert::
+; send ^{Backspace}^{Backspace}^{Backspace}
+; return
