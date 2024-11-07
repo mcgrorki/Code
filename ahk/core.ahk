@@ -15,20 +15,6 @@ CoordMode, Mouse, Screen
 
 
 
-
-SetTitleMatchMode, 2
-
-!`:: ; Ctrl + Alt + Tab to cycle through windows
-    WinGet, id, List
-    Loop, %id%
-    {
-        WinActivate, % "ahk_id " id%A_Index%
-        Sleep, 100 ; Adjust sleep duration as needed
-    }
-return
-
-
-
 ; MouseMove
 Capslock & Home:: MouseMove A_ScreenWidth/2, A_ScreenHeight/2
 Capslock & Up::MouseMove, 0, (15 * -1), 0, R

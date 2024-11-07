@@ -3,6 +3,11 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; Snap Functionality ____________________________________________________________________
+
+
+global dockHeight = 45
+
+
 f1::
 screen:= getActiveMonitor()
 WinMove, A, , screen.left, 0, screen.width/2, screen.height
@@ -98,7 +103,7 @@ getActiveMonitor() {
                     send #{Up}#{Down}
                 }
             }
-            return {left:MonitorLeft, right:MonitorRight, width:width, third:third, height:MonitorBottom-30, monNum:A_Index, monCount:MonitorCount}
+            return {left:MonitorLeft, right:MonitorRight, width:width, third:third, height:MonitorBottom-dockHeight, monNum:A_Index, monCount:MonitorCount}
         }
     }
     return

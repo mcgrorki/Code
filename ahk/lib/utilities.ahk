@@ -4,6 +4,37 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
+CapsLock & f::
+send ^{BackSpace}
+return
+
+CapsLock & v::
+send {Delete}
+return
+
+Capslock & r::
+send ^{Left}
+return
+
+Capslock & t::
+send ^{Right}
+return
+
+Capslock & e::
+send {Up}
+return
+
+Capslock & d::
+send {Down}
+return
+
+Capslock & x::
+send {Left}
+return
+
+Capslock & c::
+send {Right}
+return
 
 ^!k::
 send kmcgrory1105@gmail.com
@@ -23,14 +54,6 @@ return
 
 Capslock & w::
 Send {Up}{End}
-return
-
-Capslock & e::
-send {Up}
-return
-
-Capslock & d::
-send {Down}
 return
 
 Capslock & q::
@@ -115,11 +138,11 @@ return
 
 ; Edit close.ahk
 ^!`::
-run C:\Program Files\Microsoft VS Code\Code.exe "C:\Users\kiern\OneDrive\K_Cloud\admin\ahk\core_cloud.ahk"
+run C:\Program Files\Microsoft VS Code\Code.exe "C:\Users\kiern\OneDrive\K_Cloud\Code\ahk\core_cloud.ahk"
 return
 
 ^!1::
-run C:\Users\kiern\OneDrive\K_Cloud\admin\ahk
+run C:\Users\kiern\OneDrive\K_Cloud\Code\ahk
 return
 
 Capslock & `::
