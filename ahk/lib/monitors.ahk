@@ -23,6 +23,7 @@ screen:= getActiveMonitor()
 WinMove, A, , screen.left, 0, screen.width-2, screen.height
 return
 
+
 f4::#+left
 
 ; THIRDS ____________________________________________________________________

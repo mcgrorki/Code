@@ -3,6 +3,11 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+
+Capslock & d::
+send ^w
+return
+
 ; _______________________________
 ; Basic Nav
 Capslock & q::
@@ -33,23 +38,32 @@ Capslock & s::
 send {down}
 return
 
-Capslock & d::
+
+Capslock & 1::
+send {Home}
+return
+
+Capslock & 2::
 send {End}
 return
 
-CapsLock & c::
-send {Home}
+Capslock & 3::
+send +{Home}
+return
+
+Capslock & 4::
+send +{End}
 return
 
 Capslock & v::
 send {End}+{Home}
 return
 
-Capslock & z::
+Capslock & LWin::
 send {Left}
 return
 
-Capslock & x::
+Capslock & LAlt::
 send {Right}
 return
 
@@ -64,7 +78,7 @@ return
 ;_______________________________
 ; Delete Functionality
 
-CapsLock & f::
+Capslock & f::
 send ^{BackSpace}
 return
 
@@ -73,11 +87,11 @@ send {End}+{Home}{BackSpace}
 return
 
 Capslock & t::
-send ^{Delete}
+send {Delete}
 return
 
 Capslock & y::
-send {Delete}
+send ^{Delete}
 return
 
 Capslock & Space::
@@ -88,7 +102,7 @@ return
 ;_______________________________
 ; misc
 
-CapsLock & l::
+Capslock & l::
 send _______________________________
 return
 
@@ -140,7 +154,7 @@ return
 run C:\Users\kiern\OneDrive\K_Cloud\Code\ahk
 return
 
-Capslock & `::
+Capslock & `::O
 Hotkey ``,, Off
 send ``
 Hotkey ``,, On

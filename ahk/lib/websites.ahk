@@ -61,8 +61,9 @@ URL = https://www.youtube.com/results?search_query=%clipboard%
 openWebPage(URL)
 return
 
-!g::
-openWebPage("https://chat.openai.com")
+!+g::
+; openWebPage("https://chat.openai.com")
+run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" "https://chat.openai.com"
 return
 
 openWebPage(x) {
