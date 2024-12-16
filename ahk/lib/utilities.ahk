@@ -4,9 +4,6 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-Capslock & d::
-send ^w
-return
 
 ; _______________________________
 ; Basic Nav
@@ -19,7 +16,9 @@ send {end}{enter}
 return
 
 Capslock & o::
-send {Up}{End}{Enter}
+send {Home}{Enter}
+sleep 15
+send {Up}             
 return
 
 Capslock & e::
@@ -55,7 +54,7 @@ Capslock & 4::
 send +{End}
 return
 
-Capslock & v::
+Capslock & d::
 send {End}+{Home}
 return
 
@@ -98,11 +97,28 @@ Capslock & Space::
 send {BackSpace}
 return
 
+; Basic Functionality
+Capslock & c::
+send ^c
+return
+
+Capslock & v::
+send ^v
+Return
+
+Capslock & x::
+send ^x
+return
+
 
 ;_______________________________
 ; misc
 
-Capslock & l::
+!s::
+send {=}sum(
+return
+
+CapsLock & l::
 send _______________________________
 return
 
@@ -141,6 +157,8 @@ send {WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDow
 sleep 10
 send {WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}
 return
+
+
 
 
 

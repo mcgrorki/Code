@@ -14,7 +14,6 @@ CoordMode, Mouse, Screen
 #Include %A_ScriptDir%\lib\windowsFunctions.ahk
 
 
-
 ; MouseMove
 Capslock & Home:: MouseMove A_ScreenWidth/2, A_ScreenHeight/2
 Capslock & Up::MouseMove, 0, (15 * -1), 0, R
@@ -31,48 +30,29 @@ return
 Capslock::
 return
 
-f12::
-send ^{Backspace}
+
+!`::
+WinGetClass, OldClass, A
+WinGet, ActiveProcessName, ProcessName, A
+WinGet, WinClassCount, Count, ahk_exe %ActiveProcessName%
+IF WinClassCount = 1
+    Return
+if ActiveProcessName = vivaldi.exe
+    send ^#{2}
+else if ActiveProcessName = Code.exe
+    send ^#{5}
+else if ActiveProcessName = msedge.exe
+    send ^#{4}
+Else
+    loop, 2 {
+    WinSet, Bottom,, A
+    WinActivate, ahk_exe %ActiveProcessName%
+    Winset, AlwaysOnTop,On, A
+    WinGetClass, NewClass, A
+    if (OldClass <> "CabinetWClass" or NewClass = "CabinetWClass")
+        break
+    }
 return
 
-!f12::
-send {f12}
-return
-
-f16::
-send ^{w}
-return
-
-
-
-; ^a::
-; send {Alt down}{Tab}
-; sleep 200
-; send {Tab}
-; sleep 200
-; send {Alt up} 
-; sleep 300
-; send ^l
-; sleep 200V
-; send {right}
-; sleep 200
-; send ^{Backspace}
-; return
-
-; ; SCRATCHPAD
-; !+c::
-; send /*  */{Left}{Left}{Left}
-; return
-
-
-
-; !c::
-; send <{!}--{Space}{Space}{Left}
-; return 
-
-
-!s::
-send {=}sum(
-return
 
 
