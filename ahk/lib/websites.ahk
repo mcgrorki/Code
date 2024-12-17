@@ -1,4 +1,10 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+﻿#NoEnv
+#SingleInstance, Force
+SendMode, Input
+SetBatchLines, -1
+SetWorkingDir, %A_ScriptDir%
+
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
@@ -10,17 +16,19 @@ return
 
 ;Kiernan Drive
 !+k::
-openWebpage("https://drive.google.com/drive/u/0/my-drive")
+openWebpage("https://drive.google.com/drive/u/0/my-drive")m
 return
-
 
 !m::
 sleep 100
 send ^{a}
 send ^{c}
 sleep 100
-URL = https://www.google.com/maps/search/?api=1&query=%clipboard%
-openWebPage(URL)
+if strlen(Clipboard) > 50
+    openWebPage("https://www.google.com/maps")
+else
+    URL = https://www.google.com/maps/search/?api=1&query=%clipboard%
+    openWebPage(URL)
 return 
 
 ; K's Messenger

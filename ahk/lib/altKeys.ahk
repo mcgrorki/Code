@@ -3,6 +3,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+
 ; FOLDERS
 !d:: 
 run shell:downloads
@@ -21,34 +22,29 @@ run C:\Users\kiern\K's World\K's Documents\admin\Screenshots
 return
 
 
-; SETTINGS
-; Open Bluetooth Settings
-#b::
-run, ms-settings:bluetooth
+^!k::
+send kmcgrory1105@gmail.com
 return
 
-; Open Sound Settings
-#a::
-Run, mmsys.cpl
+!s::
+send {=}sum(
 return
 
-#m::
-run ms-settings:display
+!^w::
+send !{f4}
 return
 
+; More SCROLLL
+!WheelUp::
+send {WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}
+sleep 10
+send {WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}
+return
 
-; Onenote SideScroll
-#IfWinActive, ahk_exe ApplicationFrameHost.exe
-	+WheelDown::
-		send {WheelRight}
-		sleep 50
-	return
-	;________________________
-	+WheelUp::
-		send {WheelLeft}
-		sleep 50
-	return
-#IfWinActive
-
+!WheelDown::
+send {WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}
+sleep 10
+send {WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}
+return
 
 

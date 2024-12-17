@@ -45,10 +45,6 @@ return
 send 👍
 return
 
-`; & l::
-send 😆
-return
-
 `; & p::
-send π
+send 😆
 return

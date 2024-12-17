@@ -110,25 +110,6 @@ getActiveMonitor() {
     return
 }
 
-
-; HARD WAY 
-; f4::
-; screen:= getActiveMonitor()
-; if (screen.monCount == screen.monNum) {
-;     index:= 1
-; }
-; else {
-;     index:=index+1
-; }
-; SysGet, Monitor, Monitor, %index%
-; screenWidth := MonitorRight-MonitorLeft
-; WinMove, A, , MonitorLeft, 0, floor(screenWidth/2), MonitorBottom
-; WinMove, A, , MonitorLeft, 0, floor(screenWidth/2), MonitorBottom
-; return
-
-
-
-
 f9::
 SysGet, WorkArea, MonitorWorkArea
 MsgBox, The size of the dock (taskbar) is: %A_ScreenWidth%x%A_ScreenHeight% - WorkArea: %WorkAreaRight%x%WorkAreaBottom%
