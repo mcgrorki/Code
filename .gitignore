@@ -1,3 +1,5 @@
 
 ahk.code-workspace
 ControlMyMonitor.exe
+.vscode
+compileAHK.sh

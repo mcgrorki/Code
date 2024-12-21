@@ -4,9 +4,8 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-\::Esc 
+RWin::Esc
 RAlt::_
-CapsLock & \::\
 
 PgUp::
 send ^{Left}
@@ -31,7 +30,11 @@ return
 ; Play Button
 +^w::Media_Play_Pause
 
-
+#IfWinActive, ahk_exe spotify.exe
+	^w::
+	WinClose
+	return
+#IfWinActive
 
 ; Onenote SideScroll
 #IfWinActive, ahk_exe ApplicationFrameHost.exe

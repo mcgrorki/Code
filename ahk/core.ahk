@@ -8,43 +8,33 @@ CoordMode, Mouse, Screen
 
 #MenuMaskKey vkE8
 #Include %A_ScriptDir%\lib\monitors.ahk
-#Include %A_ScriptDir%\lib\misc.ahk
+#Include %A_ScriptDir%\lib\utilities.ahk
 #Include %A_ScriptDir%\lib\websites.ahk
 #Include %A_ScriptDir%\lib\emojies.ahk
 #Include %A_ScriptDir%\lib\capsKeys.ahk
 #Include %A_ScriptDir%\lib\winKeys.ahk
 #Include %A_ScriptDir%\lib\altKeys.ahk
-
-; MouseMove
-Capslock & Home:: MouseMove A_ScreenWidth/2, A_ScreenHeight/2
-Capslock & Up::MouseMove, 0, (15 * -1), 0, R
-Capslock & Down::MouseMove, 0, 15, 0, R
-Capslock & Left::MouseMove, (15 * -1), 0, 0, R
-Capslock & Right::MouseMove, 15, 0, 0, R
-Capslock & .::click left
-Capslock & /::click right
-    
-
+#Include %A_ScriptDir%\lib\mousefunction.ahk
 
 
 ; Edit core.ahk
 ^!1::
-run C:\Program Files\Microsoft VS Code\Code.exe "./ahk.code-workspace"
+run C:\Program Files\Microsoft VS Code\Code.exe "./ahk.code-workspace" "%A_ScriptDir%\core.ahk"
 return
 
 ^!`::
-run C:\Users\kiern\OneDrive\K_Cloud\Code\ahk
+run %A_ScriptDir%
 return
-
 
 ; Window Spy
 ^!2::
 run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\AutoHotkey\Window Spy.lnk
 return
  
-#!`::Suspend
+^#!`::Suspend
 
 Capslock & f1::
+sleep 1000
 reload
 SetCapsLockState, off
 MsgBox, done

@@ -81,7 +81,11 @@ send ^{BackSpace}
 return
 
 Capslock & g::
-send {End}+{Home}{BackSpace}
+send {End}
+sleep 50
+send +{Home}
+sleep 50
+send {BackSpace}
 return
 
 Capslock & t::

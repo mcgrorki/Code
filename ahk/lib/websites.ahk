@@ -16,7 +16,7 @@ return
 
 ;Kiernan Drive
 !+k::
-openWebpage("https://drive.google.com/drive/u/0/my-drive")m
+openWebpage("https://drive.google.com/drive/u/0/my-drive")
 return
 
 !m::
@@ -32,7 +32,7 @@ else
 return 
 
 ; K's Messenger
-!+`::
+!^Tab::
 openWebpage("https://www.messenger.com/t/100001197843252")
 return
 
