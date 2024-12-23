@@ -11,7 +11,7 @@ Capslock & Tab::
 SetCapsLockState, % (GetKeyState("CapsLock", "T") ? "Off" : "On")
 return
 
-~Capslock::
+Capslock::
 SetCapsLockState, OFF
 return
 
