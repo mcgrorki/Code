@@ -67,8 +67,6 @@ return
 msgbox % GroupCounter
 return
 
-
-
 #IfWinActive, ahk_exe Explorer.EXE
 !v::
 sleep 100
@@ -82,29 +80,3 @@ openInVsCode(path) {
     run "C:\Program Files\Microsoft VS Code\Code.exe" -n %path%
     return
 }
-    
-    
-    
-    
-    
-    ; WinGetClass, OldClass, A
-    ; WinGet, ActiveProcessName, ProcessName, A
-    ; WinGet, WinClassCount, Count, ahk_exe %ActiveProcessName%
-    ; IF WinClassCount = 1
-    ;     Return
-    ; if ActiveProcessName = vivaldi.exe
-    ;     send ^#{2}
-    ; else if ActiveProcessName = Code.exe
-    ;     send ^#{5}
-    ; else if ActiveProcessName = msedge.exe
-    ;     send ^#{4}
-    ; Else
-    ;     loop, 2 {
-    ;     WinSet, Bottom,, A
-    ;     WinActivate, ahk_exe %ActiveProcessName%
-    ;     Winset, AlwaysOnTop,On, A
-    ;     WinGetClass, NewClass, A
-    ;     if (OldClass <> "CabinetWClass" or NewClass = "CabinetWClass")
-    ;         break
-    ;     }
-    ; return

@@ -27,12 +27,15 @@ return
 screen:= getMonitorWindows()
 WinGetPos, X, Y, W,, A
 
-if (X = screen.left && Y = screen.top && W = screen.width/3)
-    WinMove, A, , screen.left+screen.width/3, 0, screen.width/3, screen.height
-else if (X = screen.left+screen.width/3 && Y = screen.top)
-    WinMove, A, , screen.left+2*screen.width/3, 0, screen.width/3, screen.height
+; msgbox % X " " Y " " W " `n" screen.left " " screen.top " " floor(screen.width/3)
+
+
+if (X = screen.left && Y = screen.top && W = floor(screen.width/3))
+    WinMove, A, , screen.left+ floor(screen.width/3), 0, floor(screen.width/3), screen.height
+else if (X = screen.left+ floor(screen.width/3) && Y = screen.top)
+    WinMove, A, , screen.left+ 2*floor(screen.width/3), 0, floor(screen.width/3), screen.height
 else {
-    WinMove, A, , screen.left, screen.top, screen.width/3, screen.height
+    WinMove, A, , screen.left, screen.top, floor(screen.width/3), screen.height
 }
 return
 
@@ -41,10 +44,10 @@ return
 screen:= getMonitorWindows()
 WinGetPos, X, Y, W,, A
 
-if (X = screen.left && Y = screen.top && W = 2*screen.width/3)
-    WinMove, A, , screen.left+screen.width/3, 0, 2*screen.width/3, screen.height
+if (X = screen.left && Y = screen.top && W = 2*floor(screen.width/3))
+    WinMove, A, , screen.left+ floor(screen.width/3), 0, 2*floor(screen.width/3), screen.height
 else {
-    WinMove, A, , screen.left, screen.top, 2*screen.width/3, screen.height
+    WinMove, A, , screen.left, screen.top, 2*floor(screen.width/3), screen.height
 }
 return
 
