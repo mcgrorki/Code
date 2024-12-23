@@ -3,9 +3,8 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-
-RWin::Esc
-RAlt::_
+RWin::_
+RAlt::Esc
 
 PgUp::
 send ^{Left}
@@ -18,7 +17,6 @@ return
 `; & l::
 send _______________________________
 return
-
 
 f5::
 Hotkey f2,, Off

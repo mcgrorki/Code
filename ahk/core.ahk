@@ -7,14 +7,15 @@ CoordMode, Mouse, Screen
 #SingleInstance force
 
 #MenuMaskKey vkE8
+#Include %A_ScriptDir%\lib\~capsKeys.ahk
+#Include %A_ScriptDir%\lib\~altKeys.ahk
+#Include %A_ScriptDir%\lib\~winKeys.ahk
+#Include %A_ScriptDir%\lib\~utilities.ahk
 #Include %A_ScriptDir%\lib\monitors.ahk
-#Include %A_ScriptDir%\lib\utilities.ahk
 #Include %A_ScriptDir%\lib\websites.ahk
 #Include %A_ScriptDir%\lib\emojies.ahk
-#Include %A_ScriptDir%\lib\capsKeys.ahk
-#Include %A_ScriptDir%\lib\winKeys.ahk
-#Include %A_ScriptDir%\lib\altKeys.ahk
 #Include %A_ScriptDir%\lib\mousefunction.ahk
+#Include %A_ScriptDir%\lib\scratchpad.ahk
 
 
 ; Edit core.ahk
@@ -30,7 +31,7 @@ return
 ^!2::
 run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\AutoHotkey\Window Spy.lnk
 return
- 
+
 ^#!`::Suspend
 
 Capslock & f1::
@@ -40,6 +41,13 @@ SetCapsLockState, off
 MsgBox, done
 return
 
+CapsLock & f2::
+sleep 1000
+origin := "C:\Users\kiern\OneDrive\K_Cloud\powerUser\Powershell\Microsoft.PowerShell_profile.ps1"
+destination := "C:\Users\kiern\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+FileCopy %origin%, %destination%, 1
+msgbox done
+return
 
 
 

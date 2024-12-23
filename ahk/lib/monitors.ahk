@@ -9,18 +9,22 @@ global dockHeight = 46
 
 
 f1::
-screen:= getActiveMonitor()
-WinMove, A, , screen.left, 0, screen.width/2, screen.height
+; screen:= getActiveMonitor()
+send #{left}
+
+; WinMove, A, , screen.left, 0, screen.width/2, screen.height
 return
 
 f2::    
-screen:= getActiveMonitor()
-WinMove, A, , screen.left+screen.width/2, 0, screen.width/2, screen.height
+; screen:= getActiveMonitor()
+; WinMove, A, , screen.left+screen.width/2, 0, screen.width/2, screen.height
+send #{right}
 return
 
 f3::
-screen:= getActiveMonitor()
-WinMove, A, , screen.left, 0, screen.width-2, screen.height
+; screen:= getActiveMonitor()
+; WinMove, A, , screen.left, 0, screen.width-2, screen.height
+send #{up}
 return
 
 
@@ -39,7 +43,7 @@ else {
     WinMove, A, , screen.left, 0, screen.third, screen.height
 }
 return
- 
+
 
 ; TWO THIRDS
 #`::

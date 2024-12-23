@@ -71,8 +71,9 @@ return
 
 #IfWinActive, ahk_exe Explorer.EXE
 !v::
-send ^+{c}
 sleep 100
+send ^+{c}
+sleep 200
 openInVsCode(clipboard)
 return
 #IfWinActive

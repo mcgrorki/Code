@@ -5,11 +5,14 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
+SetCapsLockState, Off
+
 Capslock & Tab::
 SetCapsLockState, % (GetKeyState("CapsLock", "T") ? "Off" : "On")
 return
 
-Capslock::
+~Capslock::
+SetCapsLockState, OFF
 return
 
 ; _______________________________
@@ -23,8 +26,10 @@ send {end}{enter}
 return
 
 Capslock & o::
-send {Home}{Enter}
-sleep 15
+send {Home}
+sleep 25
+send {Enter}
+sleep 25
 send {Up}             
 return
 
