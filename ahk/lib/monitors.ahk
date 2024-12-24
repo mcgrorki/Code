@@ -26,8 +26,8 @@ return
 ^`:: 
 screen:= getMonitorWindows()
 WinGetPos, X, Y, W,, A
-
 ; msgbox % X " " Y " " W " `n" screen.left " " screen.top " " floor(screen.width/3)
+
 if (X = screen.left && Y = screen.top && W = floor(screen.width/3))
     WinMove, A, , screen.left+ floor(screen.width/3), screen.top, floor(screen.width/3), screen.height
 else if (X = screen.left+ floor(screen.width/3) && Y = screen.top)
@@ -53,15 +53,28 @@ else {
 }
 return
 
+^+`::
+screen:= getMonitorWindows()
+WinGetPos, X, Y, W, H, A
+; msgbox % Y " " H " `n" screen.top " " screen.height
+
+if (H == screen.height/2 && Y == screen.top) {
+    WinMove, A, , , screen.top + screen.height/2, , screen.height/2
+}
+else {
+    WinMove, A, , , screen.top, , screen.height/2
+}
+return
+
 
 
 getMonitorWindows() {
     dockHeight = 30
-
+    
     WinGetPos, X, Y, W, H, A
     XMid := X+W/2
     YMid := Y+H/2
-
+    
     SysGet, MonitorCount, MonitorCount
 
     loop, %MonitorCount% {
