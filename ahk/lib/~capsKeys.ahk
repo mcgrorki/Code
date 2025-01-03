@@ -22,6 +22,10 @@ send {Enter}
 return
 
 Capslock & a::
+send {Esc}
+return
+
+Capslock & z::
 send {end}{enter}
 return
 
@@ -58,6 +62,14 @@ Capslock & 2::
 send {End}
 return
 
+Capslock & LWin::
+send {Left}
+return
+
+Capslock & LAlt::
+send {Right}
+return
+
 Capslock & 3::
 send +{Home}
 return
@@ -70,13 +82,6 @@ Capslock & d::
 send {End}+{Home}
 return
 
-Capslock & LWin::
-send {Left}
-return
-
-Capslock & LAlt::
-send {Right}
-return
 
 ;_______________________________
 ; Delete Functionality

@@ -49,6 +49,3 @@ FileCopy %origin%, %destination%, 1
 msgbox done
 return
 
-
-
-

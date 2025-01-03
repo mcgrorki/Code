@@ -47,5 +47,8 @@ return
 	return
 #IfWinActive
 
-
-
+#IfWinActive, ahk_exe vivaldi.exe
+^Enter::
+send {.}com{Enter}
+return
+#IfWinActive

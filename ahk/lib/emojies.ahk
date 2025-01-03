@@ -5,6 +5,15 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 `;::`;
 
+`; & y::
+send ✅
+return
+
+; X
+`; & x:: 
+send ❌
+return
+
 ; Sad 
 `; & u::
 send 😢
@@ -20,10 +29,6 @@ return
 send 🔥
 return
 
-; XD
-`; & x:: 
-send 🤣
-return
 
 ; :D
 `; & b::

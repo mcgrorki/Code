@@ -49,20 +49,6 @@ send {WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDow
 return
 
 
-#Persistent
-CurrentProcess := ""
-GroupCounter := 0
-!`::
-WinGet, NewProcess, ProcessName, A
-if (NewProcess != CurrentProcess) {
-    CurrentProcess := NewProcess
-    GroupCounter++
-    UniqueGroupName := "CurrentAppGroup" . GroupCounter ; Create a unique group name
-    GroupAdd, %UniqueGroupName%, ahk_exe %CurrentProcess% ; Add windows of the new process
-}
-GroupActivate, %UniqueGroupName%, R
-return
-
 ^!+`::
 msgbox % GroupCounter
 return

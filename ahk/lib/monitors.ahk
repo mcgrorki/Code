@@ -6,11 +6,23 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 f1::
 screen := getMonitorWindows()
 WinMove, A, , screen.left, screen.top, screen.width/2, screen.height
+WinGetPos, X, Y, W,, A
+if (W > screen.width/2+30) {
+    send #{Down}
+    sleep 50
+    WinMove, A, , screen.left, screen.top, screen.width/2, screen.height
+}
 return
 
 f2::
 screen := getMonitorWindows()
 WinMove, A, , screen.left+screen.width/2, screen.top, screen.width/2, screen.height
+WinGetPos, X, Y, W,, A
+if (W > screen.width/2+30) {
+    send #{Down}
+    sleep 50
+    WinMove, A, , screen.left+screen.width/2, screen.top, screen.width/2, screen.height
+}
 return
 
 f3::
@@ -64,6 +76,21 @@ if (H == screen.height/2 && Y == screen.top) {
 else {
     WinMove, A, , , screen.top, , screen.height/2
 }
+return
+
+
+#Persistent
+CurrentProcess := ""
+GroupCounter := 0
+!`::
+WinGet, NewProcess, ProcessName, A
+if (NewProcess != CurrentProcess) {
+    CurrentProcess := NewProcess
+    GroupCounter++
+    UniqueGroupName := "CurrentAppGroup" . GroupCounter ; Create a unique group name
+    GroupAdd, %UniqueGroupName%, ahk_exe %CurrentProcess% ; Add windows of the new process
+}
+GroupActivate, %UniqueGroupName%, R
 return
 
 
