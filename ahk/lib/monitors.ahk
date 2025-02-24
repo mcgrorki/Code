@@ -40,11 +40,17 @@ screen:= getMonitorWindows()
 WinGetPos, X, Y, W,, A
 ; msgbox % X " " Y " " W " `n" screen.left " " screen.top " " floor(screen.width/3)
 
-if (X = screen.left && Y = screen.top && W = floor(screen.width/3))
+if (X = screen.left && Y = screen.top && Round(W,-1) = Round(screen.width/3,-1)) {
+    ; Second Third
     WinMove, A, , screen.left+ floor(screen.width/3), screen.top, floor(screen.width/3), screen.height
-else if (X = screen.left+ floor(screen.width/3) && Y = screen.top)
+}
+else if (Round(X,-1) = Round(screen.left+screen.width/3,-1) && Y = screen.top) {
+    ; Third Third
     WinMove, A, , screen.left+ 2*floor(screen.width/3), screen.top, floor(screen.width/3), screen.height
+
+}
 else {
+    ; First Third
     WinMove, A, , screen.left, screen.top, floor(screen.width/3), screen.height
 }
 WinGetPos, X1, Y1, W1,, A
