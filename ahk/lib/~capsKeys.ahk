@@ -7,7 +7,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 SetCapsLockState, Off
 
-Capslock & Tab::
+f19::
+Send {f19 up}
+return
+
+f19 & Tab::
 SetCapsLockState, % (GetKeyState("CapsLock", "T") ? "Off" : "On")
 return
 
@@ -17,19 +21,19 @@ return
 
 ; _______________________________
 ; Basic Nav
-Capslock & q::
+f19 & q::
 send {Enter}
 return
 
-Capslock & a::
+f19 & a::
 send {Esc}
 return
 
-Capslock & z::
+f19 & z::
 send {end}{enter}
 return
 
-Capslock & o::
+f19 & o::
 send {Home}
 sleep 25
 send {Enter}
@@ -37,60 +41,59 @@ sleep 25
 send {Up}             
 return
 
-Capslock & e::
+f19 & e::
 send ^{Left}
 return
 
-Capslock & r::
+f19 & r::
 send ^{right}
 return
 
-Capslock & w::
+f19 & w::
 Send {Up}
 return
 
-Capslock & s::
+f19 & s::
 send {down}
 return
 
 
-Capslock & 1::
+f19 & 1::
 send {Home}
 return
 
-Capslock & 2::
+f19 & 2::
 send {End}
 return
 
-Capslock & LWin::
+f19 & LWin::
 send {Left}
 return
 
-Capslock & LAlt::
+f19 & LAlt::
 send {Right}
 return
 
-Capslock & 3::
+f19 & 3::
 send +{Home}
 return
 
-Capslock & 4::
+f19 & 4::
 send +{End}
 return
 
-Capslock & d::
+f19 & d::
 send {End}+{Home}
 return
-
 
 ;_______________________________
 ; Delete Functionality
 
-Capslock & f::
+f19 & f::
 send ^{BackSpace}
 return
 
-Capslock & g::
+f19 & g::
 send {End}
 sleep 50
 send +{Home}
@@ -98,31 +101,41 @@ sleep 50
 send {BackSpace}
 return
 
-Capslock & t::
+f19 & t::
 send {Delete}
 return
 
-Capslock & y::
+f19 & y::
 send ^{Delete}
 return
 
-Capslock & Space::
+f19 & Space::
 send {BackSpace}
 return
 
 ; Basic Functionality
-Capslock & c::
+f19 & c::
 send ^c
 return
 
-Capslock & v::
+f19 & v::
 send ^v
 Return
 
-Capslock & x::
+f19 & x::
 send ^x
 return
 
-Capslock & `;::
+f19 & `;::
 Send {End};
+return
+
+
+; ___________________
+; UTILITY
+f19 & f1::
+sleep 1000
+reload
+SetCapsLockState, off
+MsgBox, done
 return

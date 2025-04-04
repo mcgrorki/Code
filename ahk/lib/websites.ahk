@@ -32,7 +32,7 @@ else
 return 
 
 ; K's Messenger
-!^Tab::
+#+Tab::
 openWebpage("https://www.messenger.com/t/100001197843252")
 return
 

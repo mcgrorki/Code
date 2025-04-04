@@ -2,7 +2,9 @@
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
 #InstallKeybdHook
+
 CoordMode, Mouse, Screen
 #SingleInstance force
 
@@ -33,13 +35,6 @@ run C:\ProgramData\Microsoft\Windows\Start Menu\Programs\AutoHotkey\Window Spy.l
 return
 
 ^#!`::Suspend
-
-Capslock & f1::
-sleep 1000
-reload
-SetCapsLockState, off
-MsgBox, done
-return
 
 CapsLock & f2::
 sleep 1000
