@@ -63,6 +63,7 @@ return
 !y::
 sleep 100
 send ^{a}
+sleep 100
 send ^{c}
 sleep 100
 URL = https://www.youtube.com/results?search_query=%clipboard%

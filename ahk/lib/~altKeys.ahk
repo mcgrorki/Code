@@ -11,7 +11,7 @@ run shell:downloads
 return
 
 !+d::
-run C:\Users\kiern\K's World\K's Documents
+run C:\Users\kiern\KsWorld\KsDocuments
 return
 
 !^d::
@@ -19,33 +19,32 @@ run C:\Users\kiern\OneDrive\K's Cloud
 return
 
 !^+s::
-run C:\Users\kiern\K's World\K's Documents\admin\Screenshots
+run C:\Users\kiern\KsWorld\KsDocuments\admin\Screenshots
 return
 
-
 ^!k::
-send kmcgrory1105@gmail.com
+SendInput kmcgrory1105@gmail.com
 return
 
 !s::
-send {=}sum(
+SendInput {=}sum(
 return
 
 !^w::
-send !{f4}
+SendInput !{f4}
 return
 
 ; More SCROLLL
 !WheelUp::
-send {WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}
+SendInput {WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}
 sleep 10
-send {WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}
+SendInput {WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}
 return
 
 !WheelDown::
-send {WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}
+SendInput {WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}
 sleep 10
-send {WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}
+SendInput {WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}{WheelDown}
 return
 
 
@@ -57,10 +56,10 @@ return
 !v::
 clipboard := ""
 sleep 100   
-send ^+{c}
+SendInput ^+{c}
 if (clipboard = "") {
-    send ^{l}
-    send ^{c}
+    SendInput ^{l}
+    SendInput ^{c}
 }
 sleep 200
 openInVsCode(clipboard)

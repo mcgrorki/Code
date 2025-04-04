@@ -8,7 +8,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetCapsLockState, Off
 
 f19::
-Send {f19 up}
+SendInput {f19 up}
 return
 
 f19 & Tab::
@@ -22,112 +22,112 @@ return
 ; _______________________________
 ; Basic Nav
 f19 & q::
-send {Enter}
+SendInput {Enter}
 return
 
 f19 & a::
-send {Esc}
+SendInput {Esc}
 return
 
 f19 & z::
-send {end}{enter}
+SendInput {end}{enter}
 return
 
 f19 & o::
-send {Home}
+SendInput {Home}
 sleep 25
-send {Enter}
+SendInput {Enter}
 sleep 25
-send {Up}             
+SendInput {Up}             
 return
 
 f19 & e::
-send ^{Left}
+SendInput ^{Left}
 return
 
 f19 & r::
-send ^{right}
+SendInput ^{right}
 return
 
 f19 & w::
-Send {Up}
+SendInput {Up}
 return
 
 f19 & s::
-send {down}
+SendInput {down}
 return
 
 
 f19 & 1::
-send {Home}
+SendInput {Home}
 return
 
 f19 & 2::
-send {End}
+SendInput {End}
 return
 
 f19 & LWin::
-send {Left}
+SendInput {Left}
 return
 
 f19 & LAlt::
-send {Right}
+SendInput {Right}
 return
 
 f19 & 3::
-send +{Home}
+SendInput +{Home}
 return
 
 f19 & 4::
-send +{End}
+SendInput +{End}
 return
 
 f19 & d::
-send {End}+{Home}
+SendInput {End}+{Home}
 return
 
 ;_______________________________
 ; Delete Functionality
 
 f19 & f::
-send ^{BackSpace}
+SendInput ^{BackSpace}
 return
 
 f19 & g::
-send {End}
+SendInput {End}
 sleep 50
-send +{Home}
+SendInput +{Home}
 sleep 50
-send {BackSpace}
+SendInput {BackSpace}
 return
 
 f19 & t::
-send {Delete}
+SendInput {Delete}
 return
 
 f19 & y::
-send ^{Delete}
+SendInput ^{Delete}
 return
 
 f19 & Space::
-send {BackSpace}
+SendInput {BackSpace}
 return
 
 ; Basic Functionality
 f19 & c::
-send ^c
+SendInput ^c
 return
 
 f19 & v::
-send ^v
+SendInput ^v
 Return
 
 f19 & x::
-send ^x
+SendInput ^x
 return
 
 f19 & `;::
-Send {End};
+SendInput {End};
 return
 
 

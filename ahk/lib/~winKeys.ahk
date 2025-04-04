@@ -5,11 +5,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 ; #1::
-; send #^{1}
+; SendInput #^{1}
 ; return
 
 ; #2::
-; send #^{2}
+; SendInput #^{2}
 ; return
 
 #m::
@@ -38,11 +38,11 @@ return
 
 
 #+v::
-send #v
+SendInput #v
 return
 
 #v::
-send #{4}
+SendInput #{4}
 return
 
 ; SETTINGS
@@ -87,9 +87,9 @@ openProgram(A, path) {
     Loop, %WindowList%
     {
         this_window := WindowList%A_Index%
-        ; Close each window using Alt+F4 (focuses each window and sends the keystroke)
+        ; Close each window using Alt+F4 (focuses each window and SendInputs the keystroke)
         WinActivate, ahk_id %this_window%
-        Send, !{F4}
+        SendInput, !{F4}
         ; Optional: Add a small delay to avoid issues with rapid window switching
         Sleep, 50
     }
