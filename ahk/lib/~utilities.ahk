@@ -4,6 +4,14 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
+^+LWin::
+send {f20}
+return
+
+^+LAlt::
+send {f21}
+return
+
 RAlt::_
 
 PgUp::
@@ -23,7 +31,7 @@ return
 
 
 ; Play Button
-+^w::Media_Play_Pause
+; +^w::Media_Play_Pause
 
 #IfWinActive, ahk_exe spotify.exe
 	^w::
