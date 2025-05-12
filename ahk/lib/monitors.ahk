@@ -7,20 +7,18 @@ f1::
 screen := getMonitorWindows()
 WinMove, A, , screen.left, screen.top, screen.width/2, screen.height
 WinGetPos, X, Y, W,, A
-if (W > screen.width/2+30) {
-    send #{Down}
-    sleep 50
+if (W > screen.width - 30) {
+    send #{Down}                    
     WinMove, A, , screen.left, screen.top, screen.width/2, screen.height
 }
-return
+return  
 
 f2::
 screen := getMonitorWindows()
 WinMove, A, , screen.left+screen.width/2, screen.top, screen.width/2, screen.height
 WinGetPos, X, Y, W,, A
-if (W > screen.width/2+30) {
-    send #{Down}
-    sleep 50
+if (W > screen.width - 30) {
+    send #{Down}                    
     WinMove, A, , screen.left+screen.width/2, screen.top, screen.width/2, screen.height
 }
 return

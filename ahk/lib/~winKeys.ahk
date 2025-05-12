@@ -4,13 +4,13 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-; #1::
-; SendInput #^{1}
-; return
+#1::
+SendInput #^{1}
+return
 
-; #2::
-; SendInput #^{2}
-; return
+#2::
+SendInput #^{2}
+return
 
 #m::
 WinMinimize, A

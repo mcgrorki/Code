@@ -163,6 +163,7 @@ return
 f19 & f1::
 sleep 1000
 Run, "%A_AhkPath%\..\Compiler\Ahk2Exe.exe" /in "%A_ScriptDir%\core.ahk" /out "%A_ScriptDir%\core.exe"
+FileCopy "C:\Users\kiern\KsWorld\1\hello.txt", "C:\Users\kiern\KsWorld\2\", 1
 reload
 SetCapsLockState, off
 MsgBox, done
