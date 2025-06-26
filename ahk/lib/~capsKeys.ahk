@@ -157,6 +157,11 @@ SendInput {End};
 send {f19 Up}
 return
 
+f19 & 8::
+SendInput *
+return
+
+
 
 ; ___________________
 ; UTILITY

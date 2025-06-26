@@ -79,7 +79,7 @@ openWebPage(x) {
     if (WinActive("Start Page - Vivaldi")) {
     send ^l
     send %x%{enter}
-    sleep 150
+    sleep 500
     send {alt up}
     return
     }
