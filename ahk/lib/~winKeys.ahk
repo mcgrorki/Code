@@ -66,9 +66,13 @@ openProgram(A, path) {
 }
 
 
-
-
 #q::
+SendInput !{f4}
+send {Alt Up}
+return
+
+
+^#q::
     WinGet, ActiveWindowID, ID, A  ; Get the active window's ID
     WinGet, ActiveProcessName, ProcessName, ahk_id %ActiveWindowID%  ; Get the process name of the active window
     ; Get the list of all windows belonging to the same process

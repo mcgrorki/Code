@@ -161,8 +161,6 @@ f19 & 8::
 SendInput *
 return
 
-
-
 ; ___________________
 ; UTILITY
 f19 & f1::

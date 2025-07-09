@@ -36,11 +36,6 @@ SendInput {=}sum(
 send {Alt Up}
 return
 
-!^w::
-SendInput !{f4}
-send {Alt Up}
-return
-
 ; More SCROLLL
 !WheelUp::
 SendInput {WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}{WheelUp}
